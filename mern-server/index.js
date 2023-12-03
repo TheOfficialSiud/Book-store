@@ -50,17 +50,6 @@ async function run() {
         res.send(result);
     } )
 
-    //find by category
-        app.get("/all-books-by-category", async (req, res) =>{
-            let query={};
-            if(req.query?.category){
-                query={category: req.query.category}
-            }
-            const result=await bookCollection.find(query).toArray();
-            res.send(result);
-        })
-    
-
     //update a book from the database: patch or update method
     app.patch("/book/:id", async (req, res) =>{
         const id=req.params.id;
@@ -86,6 +75,16 @@ async function run() {
         // console.log(id);
         const filter={_id: new ObjectId(id)};
         const result=await bookCollection.deleteOne(filter);
+        res.send(result);
+    })
+
+    //find by category
+    app.get("/all-books/:category", async (req, res) =>{
+        let query={};
+        if(req.query?.category){
+            query={category: req.query.category}
+        }
+        const result=await bookCollection.find(query).toArray();
         res.send(result);
     })
 
