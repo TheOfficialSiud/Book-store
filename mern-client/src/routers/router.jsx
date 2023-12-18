@@ -16,6 +16,7 @@ import Blog from "../components/Blog";
       children: [
         {
           path: "/",
+          
           element: <Home/>,
         },
         {
