@@ -30,6 +30,9 @@ import Blog from "../components/Blog";
         {
             path: "/blog",
             element: <Blog/>,
+        },{
+            path: "/book/:id",
+            element: <SingleBook/>
         }
       ],
     },
