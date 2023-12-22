@@ -1,3 +1,4 @@
+
 const express = require('express')
 const app = express()
 const port = process.env.PORT || 5000
@@ -90,12 +91,25 @@ async function run() {
 
     //to get single book
     app.get("/book/:id", async (req, res) =>{
+      // console.log(req.params);
         const id=req.params.id;
         // console.log(id);
         const filter={_id: new ObjectId(id)};
         const result=await bookCollection.findOne(filter);
         res.send(result);
     })
+
+    // app.get('/book/:id', async (req, res) => {
+    //   try {
+    //     const bookId = req.params.id;
+    //     // Your asynchronous operations here
+    //     const bookData = await fetchBookData(bookId);
+    //     res.json(bookData);
+    //   } catch (error) {
+    //     console.error('Error handling /book/:id route:', error);
+    //     res.status(500).json({ error: 'Internal Server Error' });
+    //   }
+    // });
 
 
     // Send a ping to confirm a successful connection
