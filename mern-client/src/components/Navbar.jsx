@@ -1,11 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaXmark, FaBarsStaggered, FaBlog } from 'react-icons/fa6';
+import { AuthContext } from '../contacts/AuthProvider.jsx';
+// import { onAuthStateChanged } from 'firebase/auth';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setSticky] = useState(false);
+
+  const {user}= useContext(AuthContext);
+  console.log(user)
 
   // toggle menu
   const toggleMenu = () => {
