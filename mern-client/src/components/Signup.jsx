@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import googlelogo from '../assets/google-logo.png'
 // import { signInWithPopup } from "firebase/auth";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
 import 'firebase/auth';
 
 const Signup = () => {
@@ -38,7 +38,7 @@ const from = location.state?.from?.pathname || "/" ;
          .catch((error) => {
               const errorCode = error.code;
               const errorMessage = error.message;
-            setError(errorMessage)
+            // setError(errorMessage)
               // ..
          });
     }

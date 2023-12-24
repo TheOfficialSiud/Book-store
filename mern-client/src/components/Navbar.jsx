@@ -35,10 +35,8 @@ function Navbar() {
   // navItems here
   const navItems = [
     { link: 'Home', path: '/' },
-    { link: 'About', path: '/about' },
     { link: 'Shop', path: '/shop' },
     { link: 'Sell Your Book', path: '/admin/dashboard' },
-    { link: 'Blog', path: '/blog' },
   ];
 
   return (
