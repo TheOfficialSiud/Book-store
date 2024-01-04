@@ -63,7 +63,7 @@ const handleUpdate = (event)=>{
 
 
   // update Book data
-  fetch(`http://localhost:5000/book/${id}`, {
+  fetch(`https://book-store-backend-deployed.onrender.com/${id}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json"

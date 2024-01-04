@@ -55,7 +55,7 @@ const handleSubmit = (event)=>{
 
   //send data to server
 
-  fetch("http://localhost:5000/upload-book", {
+  fetch("https://book-store-backend-deployed.onrender.com/upload-book", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
